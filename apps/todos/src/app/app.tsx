@@ -1,8 +1,6 @@
+import { Todo } from '@nx-react-tutorial/data';
+import { Todos } from '@nx-react-tutorial/ui';
 import React, { useEffect, useState } from 'react'
-
-interface Todo {
-  title: string;
-}
 
 export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([])
@@ -28,9 +26,7 @@ export const App = () => {
     <>
       <h1>Todos</h1>
 
-      <ul>
-        {todos.map((t, i) => <li key={i} className="todo">{t.title}</li>)}
-      </ul>
+      <Todos todos={todos} />
 
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo
